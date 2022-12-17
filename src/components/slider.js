@@ -1,54 +1,98 @@
-function sliders(){
-return(
 
-  <div id="carouselExampleDark" class="carousel carousel slide carousel-fade Slides" data-bs-ride="carousel" >
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner Slides">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="Solo.png" class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-none d-md-block texto-slide">
-        <h5>Solo Leveling</h5>
-        <p>Capitulo 140.</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="Begging.png" class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-none d-md-block texto-slide">
-        <h5>The Begging after the end</h5>
-        <p>Capitulo 160.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="Omnisient.jpg" class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-none d-md-block texto-slide">
-        <h5>Omnisient View</h5>
-        <p>Capitulo 106.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="chainsaw.png" class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-none d-md-block texto-slide">
-        <h5>Chainsaw Man</h5>
-        <p>Capitulo 108.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Proximo</span>
-    </button>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Voltar</span>
-  </button>
+import React, { useState } from 'react';
+import '../App.css';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption,
+} from 'reactstrap';
 
-</div>
-)
+const items = [
+  {
+    src: 'https://wallpaper.dog/large/20502207.png',
+    altText: 'Solo leveling',
+    caption: 'Solo leveling',
+    key: 1,
+  },
+  {
+    src: 'https://images.alphacoders.com/116/1168270.png',
+    altText: 'The begging',
+    caption: 'The begging',
+    key: 2,
+  },
+  {
+    src: 'https://images4.alphacoders.com/112/thumb-1920-1126211.jpg',
+    altText: 'Chainsaw',
+    caption: 'Chainsaw',
+    key: 3,
+  },
+];
+
+function Slider(args) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  };
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  };
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  };
+
+  const slides = items.map((item) => {
+    return (
+      <CarouselItem className='carro'
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.src}
+      >
+        <img src={item.src} className='carroselImg' alt={item.altText} width='300px'/>
+        <CarouselCaption
+          captionText={item.caption}
+          captionHeader={item.caption}
+        />
+      </CarouselItem>
+
+    );
+  });
+
+  return (
+    <Carousel className='carros'
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+      {...args}
+    >
+      <CarouselIndicators
+        items={items}
+        activeIndex={activeIndex}
+        onClickHandler={goToIndex}
+      />
+      {slides}
+      <CarouselControl
+        direction="prev"
+        directionText="Previous"
+        onClickHandler={previous}
+      />
+      <CarouselControl
+        direction="next"
+        directionText="Next"
+        onClickHandler={next}
+      />
+    </Carousel>
+  );
 }
 
-export default sliders
+export default Slider;
