@@ -1,5 +1,4 @@
 import '../App.css'
-import SideMenu from './sideMenu';
 
 var isFalse = false
 
