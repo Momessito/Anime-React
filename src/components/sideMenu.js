@@ -31,8 +31,6 @@ function SideMenu() {
         </div>
     )
     function modes(){
-        const modes = document.getElementById('colors')
-
         const color = document.getElementById('colorpalletes')
         
         if(isfalse2 === false){

@@ -3,7 +3,6 @@ import './media.css';
 import Burgers from './components/burger';
 import SideMenu from './components/sideMenu';
 import Search from './components/search';
-import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Slider from './components/slider';
