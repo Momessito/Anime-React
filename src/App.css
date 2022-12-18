@@ -1,6 +1,8 @@
 :root {
   --color1: #2b2d42;
   --color2: #8d99ae;
+  --color3: #1a1d3d3a;
+  --color4: #02041b46;
 }
 
 a{
@@ -55,6 +57,9 @@ background-color: none;
 
 }
 #nav2{
+  transition: 0.2s all;
+  z-index: 1000;
+  position: fixed;
   display: flex;
   width: 100%;
   padding: 0px;
@@ -145,8 +150,9 @@ border-radius: 5px;
   display: block;
 }
 #sideMenu{
-  z-index: 1000;
-  position: absolute;
+  z-index: 1010;
+  overflow: hidden;
+  position: fixed;
   border-right: 1px solid black;
   box-shadow: 0px 0px 5px black;
   left: 0;
@@ -198,6 +204,8 @@ margin-top: 20px;
 top:0;
 z-index: 101;
 margin-right: 100px;
+-webkit-animation: slide-in-fwd-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+animation: slide-in-fwd-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 #Bigsearch input{
 background-color: rgba(255, 255, 255, 0);
@@ -280,7 +288,7 @@ footer{
 .carroselImg{
 width: 100%;
 max-height: 650px;
-background-color: red;
+min-height: 250px;
 }
 .carro{
   width: 100% !important;
@@ -294,3 +302,137 @@ background-color: red;
   left: 50%;
   transform: translate(-50%);
 }
+.Container:first-child{
+  width: 45%;
+}
+.Container{
+  box-shadow: rgb(100, 100, 111) 0px 7px 29px 0px;
+  margin: 60px;
+  padding: 10px 25px;
+  background-color: var(--color1);
+  border-radius: 5px;
+color:  white;
+  border: 1px solid black;
+}
+.Container h1{
+  color: var(--color2);
+}
+.itemC{
+  width: 100%;
+    display: flex;
+    transition: 0.1s all;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: var(--color4);
+}
+.itemC:hover{
+box-shadow: 0px 0px 15px black;
+
+}
+.itemC img{
+  height: 150px;
+}
+.textsC .cap{
+padding: 5px 10px;
+margin: 0px;
+background-color: var(--color2);
+border-radius: 5px;
+border: 1px solid rgb(255, 255, 255);
+}
+.textsC .at{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffc83d !important;
+
+}
+.textsC{
+  margin-left: 40px;
+}
+.textsC .cat{
+  margin: 0px;
+  display: flex;
+  padding: 0px;
+  margin-left: 5px;
+}
+.Container h4{
+font-weight: 200;
+}
+.Container h4::before{
+  content: 'Autor: ';
+}
+.Container div{
+  margin-top: 10px;
+}
+.cat h5{
+  font-size: small;
+  padding: 2px 5px;
+  border-radius: 25px;
+  background-color: var(--color2);
+  margin-left: 10px;
+  border: 1px solid rgb(255, 255, 255);
+}
+.cat::before{
+  content: 'Generos: ';
+}
+.all{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.MostC{
+
+  color: var(--color2);
+  display: flex;
+height: auto;
+padding: 5px;
+counter-increment: myIndex;
+}
+.MostC img{
+  height: 150px;
+}
+.MostC::before{
+  margin-right: 3px;
+  content:counter(myIndex);
+  font-size:10vh;
+  font-weight: 100;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--color2);
+}
+.cate{
+  display: flex;
+  width: 200px;
+  flex-direction: row;
+  margin-left: 5px;
+  flex-wrap: wrap;
+}
+.cate h5{
+  font-weight: 100;
+  font-size: small;
+}
+.texts h3{
+margin-left: 5px;
+}
+.cate h5::after{
+  content: ',';
+}
+.textsC h3{
+margin-bottom: 15px;
+font-size: large;
+padding: 0px;
+
+
+}
+.textsC h4{
+  margin-top: 10px;
+  font-size: medium;
+  margin-bottom: 10px;
+  }
+.cap{
+margin-top: 5px;
+}
+
+@-webkit-keyframes slide-in-fwd-right{0%{-webkit-transform:translateZ(-1400px) translateX(1000px);transform:translateZ(-1400px) translateX(1000px);opacity:0}100%{-webkit-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0);opacity:1}}@keyframes slide-in-fwd-right{0%{-webkit-transform:translateZ(-1400px) translateX(1000px);transform:translateZ(-1400px) translateX(1000px);opacity:0}100%{-webkit-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0);opacity:1}}
+@-webkit-keyframes slide-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}}@keyframes slide-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}}

@@ -75,7 +75,7 @@ function Slider(args) {
       previous={previous}
       {...args}
     >
-      <CarouselIndicators
+      <CarouselIndicators className='indicators'
         items={items}
         activeIndex={activeIndex}
         onClickHandler={goToIndex}

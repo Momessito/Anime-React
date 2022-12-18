@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Slider from './components/slider';
+import LastCards from './components/Lastcards';
+import MostCards from './components/MostCards';
 
 function App() {
   return (
@@ -34,8 +36,14 @@ function App() {
         <a href='home'>Recém finalizados</a>
       </nav>
       <Slider />
+
+      <div className='all'>
+        <LastCards />
+        <MostCards />
+      </div>
     </div>
   );
+
 }
 
 export default App;
