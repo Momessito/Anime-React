@@ -8,6 +8,8 @@ import Slidess from './components/slider';
 import List from './components/api';
 import MostReaded from './apitest';
 import Top from './components/carroseu';
+import Top2 from './components/Top';
+import Footer from './components/Footer';
 
 function App() {
   var isH = false
@@ -31,11 +33,15 @@ function App() {
           <div className='Top'>
             <h1>Mais lidos da semana</h1>
           <Top/>
+
           </div>
+          <Top2 />
+          <button id='carregarb' onClick={carregar3}>Carregar Mais</button>
         </div>
       </div>
       <div>
       </div>
+      <Footer/>
     </div>
   );
 
@@ -67,6 +73,21 @@ function App() {
     } else {
       isH = false
       background.style.height = '50vh'
+      button.innerText = 'Carregar Mais'
+
+    }
+  }
+  function carregar3() {
+    var background = document.getElementById('Container3');
+    var button = document.getElementById('carregarb')
+
+    if (isH === false) {
+      isH = true
+      background.style.height = 'auto'
+      button.innerText = 'Carregar Menos'
+    } else {
+      isH = false
+      background.style.height = '73vh'
       button.innerText = 'Carregar Mais'
 
     }

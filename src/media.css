@@ -2,11 +2,13 @@
   .texts {
     display: none;
   }
-
+  tex
   #nav2 a {
     font-size: 7.3px;
   }
-
+.Text-right,.Text-left{
+  display: none;
+}
   .Logo {
     filter: invert(100%);
     position: absolute;
@@ -22,23 +24,6 @@
     margin-right: 55px;
     font-weight: 500;
     display: block;
-  }
-
-
-
-  .Container {
-    box-shadow: rgb(100, 100, 111) 0px 7px 29px 0px;
-    margin: 5px;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 5px 0px;
-    background-color: var(--color1);
-    border-radius: 5px;
-    color: white;
-    border: 1px solid black;
   }
 
   .itemC {
@@ -92,9 +77,10 @@
   .carros {
 
     width: 100% !important;
-    left: 50%;
-    transform: translate(-50%);
-
+    height: 500px;
+  }
+  .carros img{
+    height: 500px;
   }
 
   h5 {
@@ -210,4 +196,13 @@
   }
 }
 
-@media screen and (max-width:500px) {}
+@media screen and (max-width:500px) {
+  .carros {
+
+    width: 100% !important;
+    height: 300px;
+  }
+  .carros img{
+    height: 300px;
+  }
+}

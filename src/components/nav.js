@@ -14,22 +14,26 @@ return(
     </div>
     <h1 className='logo-text'>Mangas Livres</h1>
     <div className='texts'>
-      <a className='a' href='home'>Mangás</a>
-      <a className='a' href='home'>Categorias</a>
-      <a className='a' href='home'>Comunidade</a>
+      <h2 className='a' >Mangás</h2>
+      <h2 className='a' >Categorias</h2>
+      <h2 className='a' >Comunidade</h2>
     </div>
     <Search />
     <Burgers />
   </nav>
   <nav id='nav2'>
-    <a href='home'>Destaques</a>
-    <a href='home'>Mais Lidos Da Semana</a>
-    <a href='home'>Lançamentos</a>
-    <a href='home'>Recém adicionados</a>
-    <a href='home'>Recém finalizados</a>
+    <h2 onClick={slider}>Destaques</h2>
+    <h2 >Mais Lidos Da Semana</h2>
+    <h2 >Lançamentos</h2>
+    <h2 >Recém adicionados</h2>
+    <h2 >Recém finalizados</h2>
   </nav>
   </div>
 )
-}
+
+function slider(){
+
+
+}}
 
 export default Nav

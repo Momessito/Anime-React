@@ -5,7 +5,6 @@ import {
   Carousel,
   CarouselItem,
   CarouselControl,
-  CarouselIndicators,
 } from 'reactstrap';
 import axios from "axios";
 
@@ -51,7 +50,7 @@ const Items = (args) => {
 
   const slides = items.map((post) => {
     return (
-        <CarouselItem className='Week'
+        <CarouselItem className='Week' id='box'
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={post.src}

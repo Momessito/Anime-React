@@ -32,13 +32,15 @@ nav {
   align-items: center;
   box-shadow: 0px 0px 5px black;
 }
-
+.texts {
+  display: flex;
+}
 nav .a {
   margin: 5px;
   padding: 5px;
   padding-top: 25px;
   padding-bottom: 18px;
-
+  font-size: 20px;
 }
 
 nav .a:hover {
@@ -85,7 +87,7 @@ background-color: none;
   border-bottom: 2px solid black;
 
 }
-#nav2 a {
+#nav2 h2 {
   margin: 0px;
 
   padding: 0px;
@@ -93,11 +95,11 @@ background-color: none;
   padding: 5px 3px;
   font-size: 10px;
 }
-#nav2 a:not(:last-child){
+#nav2 h2:not(:last-child){
   border-right: 1px solid black;
 }
 
-#nav2 a:hover{
+#nav2 h2:hover{
   outline: 1px solid white;
   background-color: rgba(0, 0, 0, 0.151);
   border-right: 1px solid black;
@@ -290,14 +292,16 @@ height: 40px;
 background-color: #2b2d42;
 outline: 1px solid white;
 }
+
 footer{
+  color: white;
   width: 100%;
   height: 300px;
   background-color: var(--color1);
-  position: absolute;
   bottom: 0;
   border-top: 3px solid black;
   box-shadow: 0px 0px 5px;
+  margin-top: 25px;
 }
 .carroselImg{
 width: 100%;
@@ -578,6 +582,15 @@ padding: 5px 0px;
   border-radius: 5px;
   border: 1px solid black;
 }
+#carregarb{
+  width: 50%;
+  padding: 5px;
+  background-color: var(--color1);
+  color: var(--color2);
+  border: none;
+  border-radius: 5px;
+  border: 1px solid black;
+}
 #carregar{
   border: 1px solid black;
   width: 50%;
@@ -653,8 +666,10 @@ fill: var(--color1);
   justify-content: flex-start;
   align-items: center;
   border: 1px solid var(--color1);
+  font-weight: bold;
 }
 .Text-right{
+  font-weight:400;
   position: absolute;
   border: 1px solid var(--color1);
   top: 0;
@@ -662,7 +677,8 @@ fill: var(--color1);
   display: flex;
   margin-top: 0px;
   padding: 20px;
-  font-size: 7vh;
+  font-size: 6
+  vh;
   color: var(--color1);
   background-color: rgba(0, 0, 0, 0.137);
   width: 25%;
@@ -680,4 +696,18 @@ fill: var(--color1);
 .carro .carousel-control-prev-icon{
   filter: invert(1);
   margin-top: 100px;
+}
+.texts2{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5px;
+}
+
+#Container3{
+  height: 73vh;
+  margin-top: -39px;
+  width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }

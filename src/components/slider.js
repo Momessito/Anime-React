@@ -63,7 +63,7 @@ const Items = (args) => {
       >
         <img src={post.image} className='carroselImg' alt={post.id} width='200px'/>
         <div className="Text-left">{post.title}</div>
-    <div className="Text-right">{post.chapters_count}</div>
+    <div className="Text-right">Capitulo.{post.chapters_count}</div>
       </CarouselItem>
 
     );

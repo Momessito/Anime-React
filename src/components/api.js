@@ -29,7 +29,7 @@ class List extends React.Component {
                            <a className="cap" href='home'>{item.chapters_count}</a>
             <br/>
             <div className="config">
-            <a className="at" href='home'><span role="img" aria-label=''>⭐{îtem.score}</span> </a>
+            <a className="at" href='home'><span role="img" aria-label=''>⭐{item.score}</span> </a>
             <div className="cat">
                 <h5>{item.categories[1]}</h5>
                 <h5>{item.categories[2]}</h5>
