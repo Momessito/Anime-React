@@ -29,7 +29,8 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+
+    <title>Anime App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -50,11 +51,41 @@
     window.addEventListener('scroll', function() {
         if (window.scrollY > 40) {
           document.getElementById('nav2').classList.add('fixed-top');
+          document.getElementById('nav2').style.animation = 'slide-in-bottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'
         } else {
           document.getElementById('nav2').classList.remove('fixed-top');
           document.body.style.paddingTop = '0';
+          document.getElementById('nav2').style.animation = 'slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'
+
         } 
     });
   }); 
   </script>
-</html>
+  <script>
+
+let isDown = false;
+    let startX;
+    let scrollLeft;
+    const drag = document.querySelector('.items2');
+    const end = () => {
+    isDown = false;
+    drag.classList.remove('active');
+    }
+    
+    const start = (e) => {
+      isDown = true;
+      drag.classList.add('active');
+      startX = e.pageX || e.touches[0].pageX - drag.offsetLeft;
+      scrollLeft = drag.scrollLeft;	
+    }
+    
+    const move = (e) => {
+        if(!isDown) return;
+    
+      e.preventDefault();
+      const x = e.pageX || e.touches[0].pageX - drag.offsetLeft;
+      const dist = (x - startX);
+      drag.scrollLeft = scrollLeft - dist;
+    }
+  </script>
+  </html>

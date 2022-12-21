@@ -1,4 +1,6 @@
 import '../App.css'
+import React from "react"
+
 
 function SideMenu() {
     var isfalse2 = false

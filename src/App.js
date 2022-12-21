@@ -1,48 +1,78 @@
 import './App.css';
 import './media.css';
-import Burgers from './components/burger';
 import SideMenu from './components/sideMenu';
-import Search from './components/search';
+import Nav from './components/nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import Slider from './components/slider';
-import LastCards from './components/Lastcards';
-import MostCards from './components/MostCards';
+import Slidess from './components/slider';
+import List from './components/api';
+import MostReaded from './apitest';
+import Top from './components/carroseu';
 
 function App() {
-  return (
-    
-    <div className="App">
-      <SideMenu/>
-      <nav>
-        <div className='Logo'>
-          <img src='https://images.vexels.com/media/users/3/157555/isolated/preview/2b48b29abd18febe3b1f92a85913ce39-icone-de-livro-simples.png' alt='Logo' height='30px' />
-        </div>
-        <h1 className='logo-text'>Mangas Livres</h1>
-        <div className='texts'>
-          <a className='a' href='home'>Mangás</a>
-          <a className='a' href='home'>Categorias</a>
-          <a className='a' href='home'>Comunidade</a>
-        </div>
-        <Search />
-        <Burgers />
-      </nav>
-      <nav id='nav2'>
-        <a href='home'>Destaques</a>
-        <a href='home'>Mais Lidos Da Semana</a>
-        <a href='home'>Lançamentos</a>
-        <a href='home'>Recém adicionados</a>
-        <a href='home'>Recém finalizados</a>
-      </nav>
-      <Slider />
+  var isH = false
 
+  return (
+
+    <div className="App">
+      <SideMenu />
+      <Nav />
+<div className='carro'>
+      <Slidess />
+</div>
       <div className='all'>
-        <LastCards />
-        <MostCards />
+        <div className='all2'>
+          <List />
+          <button id='carregar' onClick={carregar}>Carregar Mais</button>
+        </div>
+        <div className='all2'>
+          <MostReaded />
+          <button id='carregard' onClick={carregar2}>Carregar Mais</button>
+          <div className='Top'>
+            <h1>Mais lidos da semana</h1>
+          <Top/>
+          </div>
+        </div>
+      </div>
+      <div>
       </div>
     </div>
   );
 
+
+  function carregar() {
+    var background = document.getElementById('Container');
+    var button = document.getElementById('carregar')
+
+    if (isH === false) {
+      isH = true
+      background.style.height = 'auto'
+      button.innerText = 'Carregar Menos'
+    } else {
+      isH = false
+      background.style.height = '200vh'
+      button.innerText = 'Carregar Mais'
+
+    }
+  }
+
+  function carregar2() {
+    var background = document.getElementById('Container2');
+    var button = document.getElementById('carregard')
+
+    if (isH === false) {
+      isH = true
+      background.style.height = 'auto'
+      button.innerText = 'Carregar Menos'
+    } else {
+      isH = false
+      background.style.height = '50vh'
+      button.innerText = 'Carregar Mais'
+
+    }
+  }
+
 }
+
 
 export default App;

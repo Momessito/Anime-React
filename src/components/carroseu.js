@@ -16,7 +16,7 @@ const Items = (args) => {
   const getItems = async () => {
     try {
       const response = await axios.get(
-        "https://q4l8x4.deta.dev/hot"
+        "https://q4l8x4.deta.dev/mostread/week"
       );
 
 
@@ -49,46 +49,38 @@ const Items = (args) => {
     setActiveIndex(nextIndex);
   };
 
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
-
   const slides = items.map((post) => {
     return (
-      <CarouselItem 
+        <CarouselItem className='Week'
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        
+        key={post.src}
       >
-        <img src={post.image} className='carroselImg' alt={post.id} width='200px'/>
-        <div className="Text-left">{post.title}</div>
-    <div className="Text-right">{post.chapters_count}</div>
+        <img src={post.image} className='carroselImg' alt={post.id} width='200px' height='350px'/>
+        <h6>{post.title}</h6>
+        <h6>Cap.{post.chapters_count}</h6>
       </CarouselItem>
 
     );
   });
 
   return (
-    <Carousel className='carros'
+    <Carousel
       activeIndex={activeIndex}
       next={next}
       previous={previous}
       {...args}
     >
-      <CarouselIndicators className='indicators'
-        items={items}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
+
       {slides}
       <CarouselControl
-
+            className='voltar'
         direction="prev"
         directionText="Previous"
         onClickHandler={previous}
       />
       <CarouselControl
+                  className='next'
         direction="next"
         directionText="Next"
         onClickHandler={next}

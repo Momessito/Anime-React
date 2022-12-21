@@ -1,22 +1,213 @@
-@media screen and (max-width:570px) {
-    .texts{
-        display: none;
+@media screen and (max-width:1100px) {
+  .texts {
+    display: none;
+  }
+
+  #nav2 a {
+    font-size: 7.3px;
+  }
+
+  .Logo {
+    filter: invert(100%);
+    position: absolute;
+    transform: translate(-50%);
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-left: 40px;
+    border-radius: 55px;
+    background-color: none;
+  }
+
+  .logo-text {
+    margin-right: 55px;
+    font-weight: 500;
+    display: block;
+  }
+
+
+
+  .Container {
+    box-shadow: rgb(100, 100, 111) 0px 7px 29px 0px;
+    margin: 5px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    background-color: var(--color1);
+    border-radius: 5px;
+    color: white;
+    border: 1px solid black;
+  }
+
+  .itemC {
+    margin: 2px;
+    width: 95%;
+    display: flex;
+    transition: 0.1s all;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: var(--color4);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .itemC img {
+    width: 30%;
+    margin-right: 10px;
+
+  }
+
+  .Container h1 {
+
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .Container h3 {
+    font-size: medium;
+  }
+
+  .cate {
+    display: flex;
+    width: 200px;
+    flex-direction: row;
+    margin-left: 5px;
+    flex-wrap: wrap;
+  }
+
+  .textsC {
+    margin: 0;
+  }
+
+  .MostC .texts {
+    display: block;
+  }
+
+  .carros {
+
+    width: 100% !important;
+    left: 50%;
+    transform: translate(-50%);
+
+  }
+
+  h5 {
+
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+    line-height: 1.2;
+
+  }
+
+  .cat h5 {
+    font-size: small;
+    padding: 2px 5px;
+    border-radius: 25px;
+    background-color: var(--color2);
+    margin-left: 2px;
+    border: 1px solid rgb(255, 255, 255);
+  }
+
+  #search {
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 15px;
+    margin-right: 60px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  #burger {
+    position: absolute;
+    right: 0;
+    margin-top: 0px;
+    margin-right: 15px;
+    padding: 10px 5px;
+    border-radius: 55px;
+    background-color: none;
+  }
+
+  .all {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Container {
+    width: 100%;
+    margin: 5px 0px;
+
+  }
+
+  .all2 {
+    width: 100%;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  .Container:nth-child(2) {
+    width: calc(100% - 28px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 60vh;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .texts h3 {
+    width: 200px;
+
+  }
+
+  .cate {
+    width: 100px;
+  }
+
+  .all2:last-child {
+    width: 100%;
+  }
+
+  .Week {
+    margin-top: 25px;
+    border-radius: 5px;
+    width: 100% !important;
+    padding: 20px 70px;
+    background-color: var(--color1);
+    color: var(--color2);
+  }
+
+  .Top {
+    width: 100%;
+  }
+  .carousel-indicators button{
+    opacity: 1 !important;
+    background-color: var(--color1) !important;
+    width: 20px !important;
+    height: 10px !important;
+    border-radius: 100%;
     }
-    #nav2 a{
-        font-size: 8px;
-    }
-    .Logo{
-        filter: invert(100%);
-        position: absolute;
-transform: translate(-50%);
-        padding:5px 5px;
-        margin-top: 10px;
-        margin-left: 40px;
-        border-radius: 55px;
-        background-color: none;
-        }
-        .logo-text{
-            font-weight: 500;
-            display: block;
-        }
 }
+
+@media screen and (max-width:340px) {
+  #nav2 {
+    justify-content: flex-start
+  }
+}
+
+@media screen and (max-width:500px) {}
